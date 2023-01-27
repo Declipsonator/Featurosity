@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "featurosity",
+  "version": "${version}",
+  "name": "Featurosity",
+  "description": "A Minecraft Mod devoted to enhancing useless or pointless minecraft features.",
+  "authors": [
+    "Declipsonator"
+  ],
+  "contact": {
+    "website": "https://github.com/declipsonator/featurosity",
+    "repo": "https://github.com/declipsonator/featurosity"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/featurosity/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.declipsonator.featurosity.Featurosity"
+    ]
+  },
+  "mixins": [
+    "featurosity.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.13",
+    "fabric": "*",
+    "minecraft": "1.19.3"
+  }
+}

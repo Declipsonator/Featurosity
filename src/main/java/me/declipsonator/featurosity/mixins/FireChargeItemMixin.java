@@ -1,12 +1,12 @@
 package me.declipsonator.featurosity.mixins;
 
+import me.declipsonator.featurosity.Constants;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.SmallFireballEntity;
 import net.minecraft.item.FireChargeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -23,9 +23,9 @@ public class FireChargeItemMixin extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
-        world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
+        world.playSound(null, user.getX(), user.getY(), user.getZ(), Constants.FIRECHARGE_THROW_EVENT, SoundCategory.NEUTRAL, 1f, 1);
         if (!world.isClient) {
-            Vec3d velocity = getHorizontalVelocity(26.9, user.getPitch(), user.getYaw());
+            Vec3d velocity = getHorizontalVelocity(Constants.FIRECHARGE_SPEED, user.getPitch(), user.getYaw());
             SmallFireballEntity entity = new SmallFireballEntity(world, user.getX(), user.getEyeY() - 0.1, user.getZ(), velocity.x, velocity.y, velocity.z);
             entity.setItem(itemStack);
             entity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 1.5f, 1.0f);

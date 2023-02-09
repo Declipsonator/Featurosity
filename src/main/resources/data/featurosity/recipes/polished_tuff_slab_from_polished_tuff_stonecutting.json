@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "featurosity:polished_tuff"
+  },
+  "result": "featurosity:polished_tuff_slab"
+}

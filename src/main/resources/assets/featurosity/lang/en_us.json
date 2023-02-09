@@ -1,4 +1,11 @@
 {
-  "subtitles.featurosity.firecharge_throw": "Thrown Fire Charge"
+  "subtitles.featurosity.firecharge_throw": "Thrown Fire Charge",
+  "block.featurosity.polished_tuff": "Polished Tuff",
+  "block.featurosity.polished_tuff_stairs": "Polished Tuff Stairs",
+  "block.featurosity.polished_tuff_wall": "Polished Tuff Wall",
+  "block.featurosity.polished_tuff_slab": "Polished Tuff Slab",
+  "block.featurosity.tuff_stairs": "Tuff Stairs",
+  "block.featurosity.tuff_wall": "Tuff Wall",
+  "block.featurosity.tuff_slab": "Tuff Slab"
 }
 

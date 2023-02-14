@@ -4,7 +4,8 @@
   "package": "me.declipsonator.featurosity.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "FireChargeItemMixin"
+    "firecharges.FireChargeItemMixin",
+    "sporeblossomgrowth.CropBlockMixin"
   ],
   "client": [
   ],

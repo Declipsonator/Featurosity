@@ -1,4 +1,4 @@
-package me.declipsonator.featurosity.mixins;
+package me.declipsonator.featurosity.mixins.firecharges;
 
 import me.declipsonator.featurosity.Constants;
 import net.minecraft.entity.player.PlayerEntity;

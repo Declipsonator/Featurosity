@@ -1,0 +1,9 @@
+{
+  "firecharge_throw": {
+    "subtitle": "subtitles.featurosity.firecharge_throw",
+    "sounds": [
+      {"name": "featurosity:firecharge_throw"}
+    ]
+  }
+}
+

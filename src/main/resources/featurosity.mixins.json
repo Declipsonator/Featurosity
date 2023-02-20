@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.declipsonator.featurosity.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "featurosity.refmap.json",
+  "mixins": [
+    "sporeblossomgrowth.CropBlockMixin",
+    "firecharges.FireChargeItemMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

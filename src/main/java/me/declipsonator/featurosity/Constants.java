@@ -1,11 +1,27 @@
 package me.declipsonator.featurosity;
 
+import me.declipsonator.featurosity.block.entity.CopperHopperBlockEntity;
+import me.declipsonator.featurosity.block.CopperHopper;
+import me.declipsonator.featurosity.entity.CopperHopperMinecartEntity;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.client.render.entity.model.EntityModelLayers;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.vehicle.AbstractMinecartEntity;
+import net.minecraft.entity.vehicle.HopperMinecartEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.item.MinecartItem;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
 
 public class Constants {
     //Thrown Fire Charges
@@ -32,4 +48,11 @@ public class Constants {
     public static final BlockItem TUFF_WALL_ITEM = new BlockItem(TUFF_WALL, new Item.Settings());
     public static final BlockItem TUFF_SLAB_ITEM = new BlockItem(TUFF_SLAB, new Item.Settings());
 
+    //Copper Hopper
+    public static final Block COPPER_HOPPER = new CopperHopper(AbstractBlock.Settings.of(Material.METAL, MapColor.ORANGE).strength(3.0F).sounds(BlockSoundGroup.COPPER));
+    public static final BlockItem COPPER_HOPPER_ITEM = new BlockItem(COPPER_HOPPER, new Item.Settings());
+    public static final BlockEntityType<CopperHopperBlockEntity> COPPER_HOPPER_BLOCK_ENTITY = FabricBlockEntityTypeBuilder.create(CopperHopperBlockEntity::new, COPPER_HOPPER).build();
+    public static final EntityType<CopperHopperMinecartEntity> COPPER_HOPPER_MINECART_ENTITY = FabricEntityTypeBuilder.create(SpawnGroup.MISC, CopperHopperMinecartEntity::createCopperHopperMinecart).dimensions(EntityDimensions.fixed(.98f, 0.7f)).trackRangeBlocks(8).build();
+    public static final EntityModelLayer COPPER_HOPPER_MINECART_MODEL_LAYER = new EntityModelLayer(new Identifier("featurosity", "copper_hopper_minecart"), "main");
+    public static MinecartItem COPPER_HOPPER_MINECART_ITEM;
 }

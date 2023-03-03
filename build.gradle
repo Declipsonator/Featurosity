@@ -1,17 +1,32 @@
+buildscript {
+    dependencies {
+        classpath 'de.guntram.mcmod:crowdin-translate:1.4+1.19.3'
+    }
+    repositories {
+        maven {
+            name = 'CrowdinTranslate source'
+            url = "https://minecraft.guntram.de/maven/"
+        }
+    }
+}
+
+
 plugins {
     id 'fabric-loom' version '1.1-SNAPSHOT'
     id 'maven-publish'
 }
 
-version = project.mod_version
-group = project.maven_group
+apply plugin: 'de.guntram.mcmod.crowdin-translate'
+crowdintranslate.crowdinProjectName = 'featurosity'
+crowdintranslate.minecraftProjectName = 'featurosity'
+crowdintranslate.verbose = false
+
+
 
 repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // You should only use this when depending on other mods because
-    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
+    maven {
+        url = "https://minecraft.guntram.de/maven/"
+    }
 }
 
 dependencies {
@@ -20,9 +35,16 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
+
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation "de.guntram.mcmod:crowdin-translate:1.4+1.19.3"
+    include "de.guntram.mcmod:crowdin-translate:1.4+1.19.3"
 }
+
+version = project.mod_version
+group = project.maven_group
+
 
 processResources {
     inputs.property "version", project.version
@@ -63,6 +85,8 @@ jar {
     }
 }
 
+
+
 // configure the maven publication
 publishing {
     publications {
@@ -78,4 +102,8 @@ publishing {
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
     }
+}
+
+build {
+    dependsOn downloadTranslations
 }

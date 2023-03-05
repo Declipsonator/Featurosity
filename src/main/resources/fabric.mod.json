@@ -17,12 +17,6 @@
   "entrypoints": {
     "main": [
       "me.declipsonator.featurosity.Featurosity"
-    ],
-    "client": [
-      "me.declipsonator.featurosity.ClientInit"
-    ],
-    "mm:early_risers": [
-      "me.declipsonator.featurosity.EarlyRiser"
     ]
   },
   "mixins": [

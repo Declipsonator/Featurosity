@@ -1,32 +1,11 @@
-buildscript {
-    dependencies {
-        classpath 'de.guntram.mcmod:crowdin-translate:1.4+1.19.3'
-    }
-    repositories {
-        maven {
-            name = 'CrowdinTranslate source'
-            url = "https://minecraft.guntram.de/maven/"
-        }
-    }
-}
-
-
 plugins {
     id 'fabric-loom' version '1.1-SNAPSHOT'
     id 'maven-publish'
 }
 
-apply plugin: 'de.guntram.mcmod.crowdin-translate'
-crowdintranslate.crowdinProjectName = 'featurosity'
-crowdintranslate.minecraftProjectName = 'featurosity'
-crowdintranslate.verbose = false
-
-
 
 repositories {
-    maven {
-        url = "https://minecraft.guntram.de/maven/"
-    }
+
 }
 
 dependencies {
@@ -38,8 +17,6 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation "de.guntram.mcmod:crowdin-translate:1.4+1.19.3"
-    include "de.guntram.mcmod:crowdin-translate:1.4+1.19.3"
 }
 
 version = project.mod_version
@@ -104,6 +81,13 @@ publishing {
     }
 }
 
-build {
-    dependsOn downloadTranslations
+
+task preBuild {
+    println "Getting Translations..."
+    exec {
+        commandLine 'java', '-jar', 'crowdin-translate-1.2.jar', 'featurosity'
+    }
 }
+
+
+build.dependsOn preBuild

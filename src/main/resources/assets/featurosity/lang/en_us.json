@@ -6,6 +6,10 @@
   "block.featurosity.polished_tuff_slab": "Polished Tuff Slab",
   "block.featurosity.tuff_stairs": "Tuff Stairs",
   "block.featurosity.tuff_wall": "Tuff Wall",
-  "block.featurosity.tuff_slab": "Tuff Slab"
+  "block.featurosity.tuff_slab": "Tuff Slab",
+  "block.featurosity.copper_hopper": "Copper Hopper",
+  "item.featurosity.copper_hopper_minecart": "Copper Hopper Minecart",
+  "container.copper_hopper": "Copper Item Hopper",
+  "entity.copper_hopper_minecart": "Copper Hopper Minecart"
 }
 

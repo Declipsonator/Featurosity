@@ -1,5 +1,6 @@
 package me.declipsonator.featurosity.mixins.sporeblossomgrowth;
 
+import me.declipsonator.featurosity.Constants;
 import me.declipsonator.featurosity.Featurosity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -27,10 +28,8 @@ public class CropBlockMixin {
         for(int y = 0; y < 4; y++) {
             for(int x = -1; x < 2; x++) {
                 for(int z = -1; z < 2; z++) {
-                    Featurosity.LOGGER.info("I ran too");
                     if(world.getBlockState(pos.offset(x, y, z)).getBlock() == Blocks.SPORE_BLOSSOM) {
-                        Featurosity.LOGGER.info("I ran");
-                        return instance.nextInt(bound / 2);
+                        return instance.nextInt(bound / Constants.SPORE_BLOSSOM_GROWTH_MULTIPLIER);
                     }
                 }
             }

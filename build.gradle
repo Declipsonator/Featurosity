@@ -184,3 +184,13 @@ jar.finalizedBy('reobfJar')
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+
+task preBuild {
+    println "Getting Translations..."
+    exec {
+        commandLine 'java', '-jar', 'crowdin-translate-1.2.jar', 'featurosity'
+    }
+}
+
+
+build.dependsOn preBuild

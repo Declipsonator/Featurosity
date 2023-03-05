@@ -2,6 +2,7 @@ package me.declipsonator.featurosity.mixins.firecharges;
 
 
 import me.declipsonator.featurosity.Constants;
+import me.declipsonator.featurosity.registry.FeaturositySoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -24,7 +25,7 @@ public class FireChargeItemMixin extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
         ItemStack itemStack = user.getItemInHand(hand);
-        world.playSound(null, user.getX(), user.getY(), user.getZ(), Constants.FIRECHARGE_THROW_EVENT.get(), SoundSource.NEUTRAL, 1f, 1);
+        world.playSound(null, user.getX(), user.getY(), user.getZ(), FeaturositySoundEvents.FIRECHARGE_THROW_EVENT.get(), SoundSource.NEUTRAL, 1f, 1);
         if (!world.isClientSide()) {
             Vec3 velocity = getHorizontalVelocity(Constants.FIRECHARGE_SPEED, user.getRotationVector().x, user.getRotationVector().y);
             SmallFireball entity = new SmallFireball(world, user.getX(), user.getEyeY() - 0.1, user.getZ(), velocity.x, velocity.y, velocity.z);

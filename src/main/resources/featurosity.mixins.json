@@ -6,7 +6,12 @@
   "refmap": "featurosity.refmap.json",
   "mixins": [
     "sporeblossomgrowth.CropBlockMixin",
-    "firecharges.FireChargeItemMixin"
+    "firecharges.FireChargeItemMixin",
+    "copperhopper.AbstractMinecartEntityMixin",
+    "copperhopper.BlockEntityTypeMixin",
+    "copperhopper.HopperBlockEntityMixin",
+    "copperhopper.MinecartTypeMixin",
+    "copperhopper.RedstoneWireBlockMixin"
   ],
   "client": [
   ],

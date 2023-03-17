@@ -94,7 +94,9 @@ public class Featurosity implements ModInitializer {
 
         //Cooked Rotten Flesh
         Registry.register(Registries.ITEM, new Identifier("featurosity", "cooked_rotten_flesh"), Constants.COOKED_ROTTEN_FLESH);
-
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(content -> {
+            content.add(Constants.COOKED_ROTTEN_FLESH);
+        });
 
         LOG.info("Initialized Featurosity!");
     }

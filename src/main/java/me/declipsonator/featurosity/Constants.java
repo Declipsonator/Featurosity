@@ -12,12 +12,11 @@ import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
 import net.minecraft.entity.vehicle.HopperMinecartEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.item.MinecartItem;
+import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -55,4 +54,8 @@ public class Constants {
     public static final EntityType<CopperHopperMinecartEntity> COPPER_HOPPER_MINECART_ENTITY = FabricEntityTypeBuilder.create(SpawnGroup.MISC, CopperHopperMinecartEntity::createCopperHopperMinecart).dimensions(EntityDimensions.fixed(.98f, 0.7f)).trackRangeBlocks(8).build();
     public static final EntityModelLayer COPPER_HOPPER_MINECART_MODEL_LAYER = new EntityModelLayer(new Identifier("featurosity", "copper_hopper_minecart"), "main");
     public static MinecartItem COPPER_HOPPER_MINECART_ITEM;
+
+    //Cooked Rotten Flesh
+    public static final FoodComponent COOKED_ROTTEN_FLESH_COMPONENT = new FoodComponent.Builder().hunger(5).saturationModifier(0.2f).statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 600, 0), 0.2f).meat().build();
+    public static final Item COOKED_ROTTEN_FLESH = new Item(new Item.Settings().food(COOKED_ROTTEN_FLESH_COMPONENT));
 }

@@ -10,6 +10,7 @@
   "block.featurosity.copper_hopper": "Copper Hopper",
   "item.featurosity.copper_hopper_minecart": "Copper Hopper Minecart",
   "container.copper_hopper": "Copper Item Hopper",
-  "entity.copper_hopper_minecart": "Copper Hopper Minecart"
+  "entity.copper_hopper_minecart": "Copper Hopper Minecart",
+  "item.featurosity.cooked_rotten_flesh": "Cooked Rotten Flesh"
 }
 

@@ -92,6 +92,9 @@ public class Featurosity implements ModInitializer {
             content.addAfter(Items.HOPPER_MINECART, Constants.COPPER_HOPPER_MINECART_ITEM);
         });
 
+        //Cooked Rotten Flesh
+        Registry.register(Registries.ITEM, new Identifier("featurosity", "cooked_rotten_flesh"), Constants.COOKED_ROTTEN_FLESH);
+
 
         LOG.info("Initialized Featurosity!");
     }

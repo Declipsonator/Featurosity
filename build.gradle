@@ -16,7 +16,7 @@ plugins {
 apply plugin: 'org.spongepowered.mixin'
 
 group = 'me.declipsonator'
-version = {$mod_version}
+version = 1.4
 
 java {
     archivesBaseName = 'featurosity'

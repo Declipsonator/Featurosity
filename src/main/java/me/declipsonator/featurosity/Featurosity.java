@@ -74,6 +74,9 @@ public class Featurosity {
             event.accept(FeaturosityItems.COPPER_HOPPER_MINECART_ITEM);
             event.accept(FeaturosityItems.COPPER_HOPPER_ITEM);
         }
+        if(event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(FeaturosityItems.COOKED_ROTTEN_FLESH_ITEM);
+        }
     }
 
     private void onClientSetup(FMLClientSetupEvent event) {

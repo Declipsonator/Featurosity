@@ -56,6 +56,6 @@ public class Constants {
     public static MinecartItem COPPER_HOPPER_MINECART_ITEM;
 
     //Cooked Rotten Flesh
-    public static final FoodComponent COOKED_ROTTEN_FLESH_COMPONENT = new FoodComponent.Builder().hunger(5).saturationModifier(0.2f).statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 600, 0), 0.2f).meat().build();
+    public static final FoodComponent COOKED_ROTTEN_FLESH_COMPONENT = new FoodComponent.Builder().hunger(5).saturationModifier(0.2f).statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 600, 0), 0.1f).meat().build();
     public static final Item COOKED_ROTTEN_FLESH = new Item(new Item.Settings().food(COOKED_ROTTEN_FLESH_COMPONENT));
 }
